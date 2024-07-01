@@ -1,0 +1,80 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Flexbox container to ensure footer sticks to the bottom */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.common-btn {
+  background-color: #7091E6;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+  margin-top: 10px;
+}
+
+.common-btn:hover {
+  background-color: #2047a8;
+}
+
+@media (max-width: 768px) {
+  .common-btn {
+    font-size: 16px;
+  }
+}
+
+/* Footer styles */
+footer {
+  background-color: #7091E6;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 18px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #f5f5f5;
+}

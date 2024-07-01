@@ -1,0 +1,43 @@
+.slider {
+    position: relative;
+    height: 100%;
+  }
+  
+  .slide {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .left-arrow,
+  .right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .left-arrow {
+    left: 32px;
+  }
+  
+  .right-arrow {
+    right: 32px;
+  }
+  
+  .dots-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dot {
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  

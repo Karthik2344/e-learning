@@ -1,0 +1,71 @@
+/* Centering the profile container and adding some padding and box-shadow for aesthetics */
+.profile {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  margin: 120px auto;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    padding: 20px;
+    width: 90%;
+    margin: 60px auto;
+  }
+}
+
+/* Profile information section styling */
+.profile-info {
+  margin-top: 20px;
+}
+
+.profile-info p {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.profile-info p strong {
+  color: #7091E6;
+  font-size: 18px;
+}
+
+/* Styling for buttons */
+.common-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7091E6;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.common-btn:hover {
+  background-color: #5671c3;
+}
+
+.common-btn svg {
+  margin-right: 8px;
+}
+
+/* Logout button specific styling */
+.common-btn.logout {
+  background-color: red;
+}
+
+.common-btn.logout:hover {
+  background-color: darkred;
+}
+
+
