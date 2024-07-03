@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 
 const Header = ({ isAuth }) => {
   return (
-    <header>
+    <header className="site-header">
       <div className="logo">E-Learning</div>
 
-      <div className="link">
-        <Link to={"/"}>Home</Link>
-        <Link to={"/courses"}>Courses</Link>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/contact"}>Contact us</Link>
+      <nav className="nav-links">
+        <Link to={"/"} className="nav-link">Home</Link>
+        <Link to={"/courses"} className="nav-link">Courses</Link>
+        <Link to={"/about"} className="nav-link">About</Link>
+        <Link to={"/contact"} className="nav-link">Contact Us</Link>
         {isAuth ? (
-          <Link to={"/account"}>Account</Link>
+          <Link to={"/account"} className="nav-link">Account</Link>
         ) : (
-          <Link to={"/login"}>Login</Link>
+          <Link to={"/login"} className="nav-link">Login</Link>
         )}
-      </div>
+      </nav>
     </header>
   );
 };
