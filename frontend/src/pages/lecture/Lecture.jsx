@@ -167,6 +167,7 @@ const Lecture = ({ user }) => {
     fetchLectures();
     fetchProgress();
   }, []);
+
   return (
     <>
       {loading ? (
@@ -260,16 +261,15 @@ const Lecture = ({ user }) => {
 
               {lectures && lectures.length > 0 ? (
                 lectures.map((e, i) => (
-                  <>
+                  <React.Fragment key={e._id}>
                     <div
                       onClick={() => fetchLecture(e._id)}
-                      key={i}
                       className={`lecture-number ${
                         lecture._id === e._id && "active"
                       }`}
                     >
                       {i + 1}. {e.title}{" "}
-                      {progress &&
+                      {progress.length > 0 &&
                         progress[0].completedLectures.includes(e._id) && (
                           <span
                             style={{
@@ -292,7 +292,7 @@ const Lecture = ({ user }) => {
                         Delete {e.title}
                       </button>
                     )}
-                  </>
+                  </React.Fragment>
                 ))
               ) : (
                 <p>No Lectures Yet!</p>

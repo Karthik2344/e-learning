@@ -149,7 +149,7 @@ export const addProgress = TryCatch(async (req, res) => {
 
   await progress.save();
 
-  return res.status(201).json({
+  res.status(201).json({
     message: "new Progress added",
   });
 });
