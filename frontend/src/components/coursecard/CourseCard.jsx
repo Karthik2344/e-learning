@@ -29,13 +29,14 @@ const CourseCard = ({ course }) => {
       }
     }
   };
+
   return (
     <div className="course-card">
       <img src={`${server}/${course.image}`} alt="" className="course-image" />
       <h3>{course.title}</h3>
-      <p>Instructor- {course.createdBy}</p>
-      <p>Druration- {course.duration}</p>
-      <p>Price- {course.price}</p>
+      <p>Instructor: {course.createdBy}</p>
+      <p>Duration: {course.duration} weeks</p>
+      <p>Price: {course.price}</p>
       {isAuth ? (
         <>
           {user && user.role !== "admin" ? (
@@ -76,8 +77,7 @@ const CourseCard = ({ course }) => {
       {user && user.role === "admin" && (
         <button
           onClick={() => deleteHandler(course._id)}
-          className="common-btn"
-          style={{ background: "red" }}
+          className="common-btn red-btn"
         >
           Delete
         </button>
