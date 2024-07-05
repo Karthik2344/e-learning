@@ -29,7 +29,7 @@
         a {
           display: flex;
           text-decoration: none;
-          counter-reset: blueviolet;
+          counter-reset: rgb(104, 43, 226);
   
           span {
             margin-left: 15px;
