@@ -4,13 +4,18 @@ import Layout from "../Utils/Layout";
 import axios from "axios";
 import { server } from "../../main";
 import "./dashboard.css";
+import { FaChalkboardTeacher, FaUsers, FaBook } from "react-icons/fa"; // Import icons
 
-const AdminDashbord = ({ user }) => {
+const AdminDashboard = ({ user }) => {
   const navigate = useNavigate();
 
   if (user && user.role !== "admin") return navigate("/");
 
-  const [stats, setStats] = useState([]);
+  const [stats, setStats] = useState({
+    totalCourses: 0,
+    totalLectures: 0,
+    totalUsers: 0,
+  });
 
   async function fetchStats() {
     try {
@@ -29,26 +34,28 @@ const AdminDashbord = ({ user }) => {
   useEffect(() => {
     fetchStats();
   }, []);
+
   return (
-    <div>
-      <Layout>
-        <div className="main-content">
-          <div className="box">
-            <p>Total Courses</p>
-            <p>{stats.totalCoures}</p>
-          </div>
-          <div className="box">
-            <p>Total Lectures</p>
-            <p>{stats.totalLectures}</p>
-          </div>
-          <div className="box">
-            <p>Total Users</p>
-            <p>{stats.totalUsers}</p>
-          </div>
+    <Layout>
+      <div className="main-content">
+        <div className="box">
+          <FaBook size={40} color="#004080" />
+          <p>Total Courses</p>
+          <p>{stats.totalCourses}</p>
         </div>
-      </Layout>
-    </div>
+        <div className="box">
+          <FaChalkboardTeacher size={40} color="#004080" />
+          <p>Total Lectures</p>
+          <p>{stats.totalLectures}</p>
+        </div>
+        <div className="box">
+          <FaUsers size={40} color="#004080" />
+          <p>Total Users</p>
+          <p>{stats.totalUsers}</p>
+        </div>
+      </div>
+    </Layout>
   );
 };
 
-export default AdminDashbord;
+export default AdminDashboard;
