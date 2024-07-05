@@ -28,11 +28,9 @@ const Account = ({ user }) => {
             <p>
               <strong>Name:</strong> {user.name}
             </p>
-
             <p>
               <strong>Email:</strong> {user.email}
             </p>
-
             <button
               onClick={() => navigate(`/${user._id}/dashboard`)}
               className="common-btn"
@@ -40,9 +38,7 @@ const Account = ({ user }) => {
               <MdDashboard />
               Dashboard
             </button>
-
             <br />
-
             {user.role === "admin" && (
               <button
                 onClick={() => navigate(`/admin/dashboard`)}
@@ -52,13 +48,8 @@ const Account = ({ user }) => {
                 Admin Dashboard
               </button>
             )}
-
             <br />
-
-            <button
-              onClick={logoutHandler}
-              className="common-btn logout"
-            >
+            <button onClick={logoutHandler} className="common-btn logout">
               <IoMdLogOut />
               Logout
             </button>
