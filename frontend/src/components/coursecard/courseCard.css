@@ -1,33 +1,64 @@
 .course-card {
   background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  border-radius: 8px;
   text-align: center;
-  width: 250px;
-  transition: 0.5s;
+  width: 200px;
+  margin: 10px;
+  transition: 0.3s ease-in-out;
+}
 
-  &:hover {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+.course-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-size: 16px; /* Adjusted font size */
+  color: #333;
+  margin-bottom: 4px; /* Reduced margin */
+}
+
+p {
+  font-size: 14px; /* Adjusted font size */
+  color: #666;
+  margin: 0px 0; /* Reduced margin */
+}
+
+.common-btn {
+  background-color: #007afd;
+  color: white;
+  border: none;
+  padding: 6px 12px; /* Reduced padding */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-top: 6px; /* Reduced margin-top */
+}
+
+.common-btn:hover {
+  background-color: #005bb5;
+}
+
+.common-btn.red-btn {
+  background-color: red;
+}
+
+@media (max-width: 768px) {
+  .course-card {
+    width: 100%;
+    margin: 10px 0;
   }
 
   .course-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-
-  h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 5px;
+    height: 150px; /* Adjusted height for smaller screens */
   }
 }
