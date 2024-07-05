@@ -6,10 +6,17 @@
 }
 
 .left {
+<<<<<<< HEAD
   flex: 2; /* Take up twice as much space as the right side */
   .dashboard-content {
     display: flex;
     justify-content: center; /* Center content */
+=======
+  flex: 2; 
+  .dashboard-content {
+    display: flex;
+    justify-content: center; 
+>>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 40px;
@@ -20,9 +27,15 @@
 }
 
 .right {
+<<<<<<< HEAD
   flex: 1; /* Take up less space than the left side */
   position: sticky; /* Ensure the right side stays in place */
   top: 20px; /* Add some space from the top */
+=======
+  flex: 1; 
+  position: sticky; 
+  top: 20px; 
+>>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
   
   .course-form {
     background-color: #fff;
@@ -101,21 +114,36 @@
   background-color: #c44040;
 }
 
+<<<<<<< HEAD
 /* Ensure three items per row in the dashboard content */
 .course-card {
   flex: 1 1 calc(33.333% - 40px); /* Adjust width for three items per row */
   box-sizing: border-box;
   margin: 10px; /* Adjust margin as needed */
+=======
+.course-card {
+  flex: 1 1 calc(33.333% - 40px); 
+  box-sizing: border-box;
+  margin: 10px; 
+>>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
 }
 
 @media (max-width: 768px) {
   .course-card {
+<<<<<<< HEAD
     flex: 1 1 calc(50% - 40px); /* Two items per row on smaller screens */
+=======
+    flex: 1 1 calc(50% - 40px); 
+>>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
   }
 }
 
 @media (max-width: 480px) {
   .course-card {
+<<<<<<< HEAD
     flex: 1 1 100%; /* One item per row on very small screens */
+=======
+    flex: 1 1 100%; 
+>>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
   }
 }
