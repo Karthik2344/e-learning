@@ -1,22 +1,19 @@
 .main-content {
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
+
   align-items: stretch; /* Stretch items vertically to equal height */
-=======
+
   align-items: stretch; 
->>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
 }
 
 .box {
-<<<<<<< HEAD
   flex: 1; /* Ensure each box takes up equal space */
-=======
+
   flex: 1; 
->>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
   background-color: #e6f2ff;
   padding: 20px;
   border-radius: 10px;
@@ -38,10 +35,7 @@
 
 @media (max-width: 768px) {
   .main-content {
-<<<<<<< HEAD
     flex-direction: column; /* Stack boxes vertically on smaller screens */
-=======
     flex-direction: column; 
->>>>>>> e98cb42b28b82e0cc092ce9e39eb6c683231ab29
   }
 }

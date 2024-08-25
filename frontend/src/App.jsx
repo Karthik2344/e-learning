@@ -23,6 +23,8 @@ import AdminUsers from "./admin/Users/AdminUsers";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import ResetPassword from "./pages/auth/ResetPassword";
 import ContactUs from "./pages/contactus/ContactUs";
+import AdminPayments from "./admin/Payments/AdminPayments";
+import AdminFeedback from "./admin/Feedback/AdminFeedback";
 
 const App = () => {
   const { isAuth, user, loading } = UserData();
@@ -89,7 +91,16 @@ const App = () => {
               path="/admin/users"
               element={isAuth ? <AdminUsers user={user} /> : <Login />}
             />
+            <Route
+              path="/admin/payments"
+              element={isAuth ? <AdminPayments user={user} /> : <Login />}
+            />
+            <Route
+              path="/admin/feedback"
+              element={isAuth ? <AdminFeedback user={user} /> : <Login />}
+            />
           </Routes>
+
           <Footer />
         </BrowserRouter>
       )}

@@ -5,6 +5,7 @@ import { rm } from "fs";
 import { promisify } from "util";
 import fs from "fs";
 import { User } from "../models/User.js";
+import { Feedback } from "../models/Feedback.js";
 
 export const createCourse = TryCatch(async (req, res) => {
   const { title, description, category, createdBy, duration, price } = req.body;
@@ -141,3 +142,14 @@ export const updateRole = TryCatch(async (req, res) => {
     });
   }
 });
+
+export const getAllFeedback = async (req, res) => {
+  try {
+    const feedbacks = await Feedback.find({})
+      .populate('userId', 'name')
+      .populate('courseId', 'title');
+    res.status(200).json(feedbacks);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching feedbacks', error });
+  }
+};

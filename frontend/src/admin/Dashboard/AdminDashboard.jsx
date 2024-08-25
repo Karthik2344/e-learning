@@ -5,6 +5,7 @@ import axios from "axios";
 import { server } from "../../main";
 import "./dashboard.css";
 import { FaChalkboardTeacher, FaUsers, FaBook } from "react-icons/fa"; // Import icons
+import AdminFeedback from "../Feedback/AdminFeedback";
 
 const AdminDashboard = ({ user }) => {
   const navigate = useNavigate();

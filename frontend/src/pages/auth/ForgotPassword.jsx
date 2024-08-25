@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "./auth.css";
+import "./ForgotPassword.css"; // Make sure to change the CSS file name to avoid conflicts
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { server } from "../../main";
+import forgot from "../../assets/forgot.jpeg";
+import { FaEnvelope } from "react-icons/fa";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -24,22 +26,30 @@ const ForgotPassword = () => {
       setBtnLoading(false);
     }
   };
+
   return (
-    <div className="auth-page">
-      <div className="auth-form">
-        <h2>Forgot password</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="text">Enter email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button disabled={btnLoading} className="common-btn">
-            {btnLoading ? "Please Wait..." : "Forgot Password"}
-          </button>
-        </form>
+    <div className="forgot-password-page">
+      <div className="forgot-password-form-container">
+        <div className="image-section">
+          <img src={forgot} alt="Security" />
+        </div>
+        <div className="form-section">
+          <h2>Forgot Password?</h2>
+          <p>Please enter your email address to reset your password.</p>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="email"><FaEnvelope className="mail-icon" /> Enter email</label><br />
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button disabled={btnLoading} className="common-btn-f">
+              {btnLoading ? "Please Wait..." : "Forgot Password"}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

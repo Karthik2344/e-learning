@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AiFillHome, AiOutlineLogout } from "react-icons/ai";
 import { FaBook, FaUserAlt } from "react-icons/fa";
 import { UserData } from "../../context/UserContext";
+import { FaMoneyBillAlt, FaCommentAlt } from "react-icons/fa"; // Import FaCommentAlt
 
 const Sidebar = () => {
   const { user } = UserData();
@@ -38,6 +39,24 @@ const Sidebar = () => {
             </Link>
           </li>
         )}
+
+        <li>
+          <Link to={"/admin/payments"}>
+            <div className="icon">
+              <FaMoneyBillAlt />
+            </div>
+            <span>Payments</span>
+          </Link>
+        </li>
+
+        <li>
+          <Link to={"/admin/feedback"}>
+            <div className="icon">
+              <FaCommentAlt />
+            </div>
+            <span>Feedback</span>
+          </Link>
+        </li>
 
         <li>
           <Link to={"/account"}>

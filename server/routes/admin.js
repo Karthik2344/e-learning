@@ -5,6 +5,7 @@ import {
   createCourse,
   deleteCourse,
   deleteLecture,
+  getAllFeedback,
   getAllStats,
   getAllUser,
   updateRole,
@@ -20,5 +21,7 @@ router.delete("/lecture/:id", isAuth, isAdmin, deleteLecture);
 router.get("/stats", isAuth, isAdmin, getAllStats);
 router.put("/user/:id", isAuth, updateRole);
 router.get("/users", isAuth, isAdmin, getAllUser);
+router.get('/admin/feedback', getAllFeedback);
+
 
 export default router;

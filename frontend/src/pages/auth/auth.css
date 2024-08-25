@@ -141,6 +141,13 @@ form {
   color: #232836;
   text-align: center;
 }
+.form-link p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #232836;
+  text-align: center;
+  margin-bottom:-30px;
+}
 
 .form a {
   color: #0171d3;
@@ -165,7 +172,7 @@ form {
         border-radius: 10px;
         box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
         text-align: center;
-        width: 300px;
+        width: 350px;
 
         h2{
             font-size: 24px;
@@ -184,12 +191,12 @@ form {
             }
 
             input{
-                width: 92%;
+                width: 104%;
                 padding: 10px;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
                 border: 1px solid #ccc;
                 border-radius: 5px;
-
+                padding-bottom: 10px;
             }
         }
     }

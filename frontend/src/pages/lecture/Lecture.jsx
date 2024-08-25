@@ -6,6 +6,7 @@ import { server } from "../../main";
 import Loading from "../../components/loading/Loading";
 import toast from "react-hot-toast";
 import { TiTick } from "react-icons/ti";
+import { CourseData } from "../../context/CourseContext";
 
 const Lecture = ({ user }) => {
   const [lectures, setLectures] = useState([]);
@@ -20,6 +21,7 @@ const Lecture = ({ user }) => {
   const [video, setvideo] = useState("");
   const [videoPrev, setVideoPrev] = useState("");
   const [btnLoading, setBtnLoading] = useState(false);
+  const { course } = CourseData();
 
   if (user && user.role !== "admin" && !user.subscription.includes(params.id))
     return navigate("/");
@@ -174,12 +176,20 @@ const Lecture = ({ user }) => {
         <Loading />
       ) : (
         <>
-          <div className="progress">
-            Lecture completed - {completedLec} out of {lectLength} <br />
-            <progress value={completed} max={100}></progress> {completed} %
+          <div className="top">
+            <h1 className="title-main">{course.title}</h1>
           </div>
+
           <div className="lecture-page">
             <div className="left">
+              {/* Show progress bar only for regular users */}
+              {user && user.role !== "admin" && user.role !== "super admin" && (
+                <div className="progress">
+                  Lecture completed - {completedLec} out of {lectLength} <br />
+                  <progress value={completed} max={100}></progress> {completed}{" "}
+                  %
+                </div>
+              )}
               {lecLoading ? (
                 <Loading />
               ) : (
@@ -268,20 +278,21 @@ const Lecture = ({ user }) => {
                         lecture._id === e._id && "active"
                       }`}
                     >
-                      {i + 1}. {e.title}{" "}
                       {progress.length > 0 &&
                         progress[0].completedLectures.includes(e._id) && (
                           <span
+                            className="tick"
                             style={{
-                              background: "red",
                               padding: "2px",
-                              borderRadius: "6px",
-                              color: "greenyellow",
+                              borderRadius: "2px",
+                              color: "#00008B",
+                              // marginRight:'200px'
                             }}
                           >
                             <TiTick />
                           </span>
                         )}
+                      {i + 1}. {e.title}{" "}
                     </div>
                     {user && user.role === "admin" && (
                       <button

@@ -1,0 +1,40 @@
+.admin-feedback {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .admin-feedback .headf {
+    margin-bottom: 20px;
+    margin-left: 350px;
+  }
+  
+  .admin-feedback .headf h1 {
+    color: black;
+  }
+  
+  .admin-feedback table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-feedback th, 
+  .admin-feedback td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .admin-feedback th {
+    background-color: #004080;
+    color: white;
+  }
+  
+  .admin-feedback tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .admin-feedback tr:hover {
+    background-color: #ddd;
+  }
+  

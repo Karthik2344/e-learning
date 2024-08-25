@@ -3,34 +3,53 @@ import "./coursestudy.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CourseData } from "../../context/CourseContext";
 import { server } from "../../main";
+import FeedbackForm from "../../components/feedback/FeedbackForm";
+import CourseFeedback from "../../components/feedback/CourseFeedback";
 
 const CourseStudy = ({ user }) => {
   const params = useParams();
-
   const { fetchCourse, course } = CourseData();
   const navigate = useNavigate();
 
-  if (user && user.role !== "admin" && !user.subscription.includes(params.id))
-    return navigate("/");
-
   useEffect(() => {
-    fetchCourse(params.id);
-  }, []);
+    if (
+      user &&
+      user.role !== "admin" &&
+      !user.subscription.includes(params.id)
+    ) {
+      navigate("/");
+    } else {
+      fetchCourse(params.id);
+    }
+  }, [fetchCourse, navigate, params.id, user]);
+
   return (
-    <>
-      {course && (
-        <div className="course-study-page">
-          <img src={`${server}/${course.image}`} alt="" width={350} />
-          <h2>{course.title}</h2>
-          <h4>{course.description}</h4>
-          <h5>by - {course.createdBy}</h5>
-          <h5>Duration - {course.duration} weeks</h5>
-          <Link to={`/lectures/${course._id}`}>
-            <h2>Lectures</h2>
-          </Link>
-        </div>
-      )}
-    </>
+    <div className="course-study-page">
+      <div className="course-study-section">
+        {course ? (
+          <div className="course-container">
+            <div className="course-image">
+              <img src={`${server}/${course.image}`} alt={course.title} />
+            </div>
+            <div className="course-details">
+              <h1>{course.title}</h1>
+              <p className="description">{course.description}</p>
+              <p className="instructor">Instructor: {course.createdBy}</p>
+              <p className="duration">Duration: {course.duration} weeks</p>
+              <Link to={`/lectures/${course._id}`} className="lectures-link">
+                Go to Lectures
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <p>Loading course details...</p>
+        )}
+      </div>
+      <div className="feedback-section">
+        {user && <FeedbackForm courseId={params.id} />}
+        <CourseFeedback courseId={params.id} />
+      </div>
+    </div>
   );
 };
 

@@ -1,0 +1,24 @@
+.admin-payments {
+    padding: 20px;
+  }
+
+  .headp{
+    margin-left: 350px;
+  }
+  
+  .admin-payments table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-payments th,
+  .admin-payments td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .admin-payments th {
+    background-color: #f2f2f2;
+  }
+  

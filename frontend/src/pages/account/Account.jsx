@@ -2,6 +2,7 @@ import React from "react";
 import { MdDashboard } from "react-icons/md";
 import "./account.css";
 import { IoMdLogOut } from "react-icons/io";
+import { FaUserCircle } from "react-icons/fa";
 import { UserData } from "../../context/UserContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -23,21 +24,26 @@ const Account = ({ user }) => {
     <div>
       {user && (
         <div className="profile">
+          <div className="acc-profile-icon">
+            <FaUserCircle />
+          </div>
           <h2>My Profile</h2>
           <div className="profile-info">
             <p>
-              <strong>Name:</strong> {user.name}
+              <h3>Name</h3> {user.name}
             </p>
             <p>
-              <strong>Email:</strong> {user.email}
+              <h3>Email</h3> {user.email}
             </p>
-            <button
-              onClick={() => navigate(`/${user._id}/dashboard`)}
-              className="common-btn"
-            >
-              <MdDashboard />
-              Dashboard
-            </button>
+            {user.role !== "admin" && (
+              <button
+                onClick={() => navigate(`/${user._id}/dashboard`)}
+                className="common-btn"
+              >
+                <MdDashboard />
+                <span>Dashboard</span>
+              </button>
+            )}
             <br />
             {user.role === "admin" && (
               <button
@@ -45,13 +51,13 @@ const Account = ({ user }) => {
                 className="common-btn"
               >
                 <MdDashboard />
-                Admin Dashboard
+                <span>Admin Dashboard</span>
               </button>
             )}
             <br />
             <button onClick={logoutHandler} className="common-btn logout">
               <IoMdLogOut />
-              Logout
+              <span>Logout</span>
             </button>
           </div>
         </div>

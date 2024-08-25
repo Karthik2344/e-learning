@@ -1,34 +1,73 @@
+/* Page Container */
 .course-study-page {
-  padding: 50px 0;
-  background-color: #f5f5f5;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Course Study Section */
+.course-study-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Course Container */
+.course-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+}
+
+/* Course Image */
+.course-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Course Details */
+.course-details {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-height: 80vh;
+  justify-content: center;
+}
 
-  h2 {
-    font-size: 24px;
-    color: #7091E6;
-    text-align: center;
-  }
+.course-details h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
 
-  h4 {
-    font-size: 21px;
-    color: #7091E6;
-    text-align: center;
-  }
+.course-details .description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
 
-  h5 {
-    font-size: 20px;
-    color: #7091E6;
-    text-align: center;
-  }
+.course-details .instructor,
+.course-details .duration {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 5px;
+}
 
-  a {
-    text-decoration: none;
-    background-color: white;
-    padding: 5px 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-  }
+.course-details .lectures-link {
+  align-self: flex-start;
+  text-decoration: none;
+  color: #fff;
+  background-color: #7091e6;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.course-details .lectures-link:hover {
+  background-color: #567ac4;
 }
